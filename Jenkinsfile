@@ -15,7 +15,7 @@ node {
              //sh 'mvn clean package sonar:sonar' 
              sh ' mvn org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
              ' -Dsonar.host.url=https://sonarcloud.io ' +
-             ' -Dsonar.organization=Aashish ' +
+             ' -Dsonar.organization=sonarkeys ' +
              ' -Dsonar.login=a66b67c06ad617ffe263a2202b9624b23738281a '   
          //}
       }
