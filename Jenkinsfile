@@ -9,15 +9,15 @@ node {
        sh 'mvn clean compile'
      }
    }
-   stage('SonarQube') {
-      //withSonarQubeEnv('SonarQube') {
+   stage('SonarScan') {
+      withSonarQubeEnv('SonarQube') {
          withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
              //sh 'mvn clean package sonar:sonar' 
              sh ' mvn org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
              ' -Dsonar.host.url=https://sonarcloud.io ' +
              ' -Dsonar.organization=mypro ' +
              ' -Dsonar.login=ac9d4e50459a71a808e9d31a2448987f4998ff1d '   
-         //}
+         }
       }
    }
     
