@@ -9,7 +9,7 @@ node {
        sh 'mvn clean compile'
      }
    }
-   stage('SonarScan') {
+   stage('SonarQube') {
       //withSonarQubeEnv('SonarQube') {
          withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
              //sh 'mvn clean package sonar:sonar' 
